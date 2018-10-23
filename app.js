@@ -3,7 +3,7 @@ var fs = require("fs");
 var app = express();
 
 app.get("/" , function (req , res) {
-    fs.readFile("./project/index/dist/index.html" , "utf-8" , function(err , data){
+    fs.readFile("./project/index/static/index.html" , "utf-8" , function(err , data){
         if(err){
             res.send("<!DOCTYPE html><html><head><title>哈哈</title></head><body>123</body></html>");
         }else{
