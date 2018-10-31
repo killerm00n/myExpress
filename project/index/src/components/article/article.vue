@@ -7,6 +7,7 @@
 <script>
 import { markdown } from "markdown";
 import ajax from "./../../utils/ajax.js";
+import axios from "axios";
 export default {
     data(){
         return {
@@ -15,15 +16,20 @@ export default {
     },
     created(){
         let artId = this.$route.query.articleId
-        let _this = this;
-        ajax({
-            url: `/${artId}.md`,
-            type: 'get',
-            success(res){
-                console.log("正文res:" , res);
-                _this.content = markdown.toHTML(res);
-            }
+        // let _this = this;
+        axios.get(`/${artId}.md`, {
+            responseType: 'text'
+        }).then(res => {
+            this.content = markdown.toHTML(res.data);
         })
+        // ajax({
+        //     url: `/${artId}.md`,
+        //     type: 'get',
+        //     success(res){
+        //         console.log("正文res:" , res);
+        //         _this.content = markdown.toHTML(res);
+        //     }
+        // })
     },
     mounted(){
         

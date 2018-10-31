@@ -6,7 +6,13 @@
         <div class="page-moon_stars">
             <span class="page-moon_star" v-for="(star , index) in stars" :style="StarStyle(star)" :key="'star_'+index + '_' + star.id"></span>
         </div>
-        <h1 class="title">Building...</h1>
+
+        <div class="page-links">
+            <router-link class="page-link" to="/list?type=articles">随想·创作</router-link>
+            <router-link class="page-link" to="/list?type=works">工作·技术</router-link>
+            <router-link class="page-link" to="/list?type=ideas">创意·游戏</router-link>
+        </div>
+        <!-- <h1 class="title">Building...</h1> -->
     </section>
 </template>
 
@@ -34,7 +40,7 @@ export default {
     },
     methods: {
         StarStyle(star){
-            console.log(star)
+            // console.log(star)
             return `left:${star.left}%;top:${star.top}%;-webkit-transform:scale(${star.scale});opacity:${star.opacity};`;
         }
     }
@@ -81,5 +87,25 @@ export default {
     text-align: center;
     color:#fff;
     text-shadow: 0 0 10px #fff;
+}
+
+.page-links{
+    position: fixed;
+    z-index: 5;
+    width: 40vw;
+    top:30vh;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.page-link{
+    text-decoration: none;
+    color:#fff;
+    display: block;
+    font-size:.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+    margin:0 0 .5rem 0;
 }
 </style>

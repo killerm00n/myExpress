@@ -1,0 +1,11 @@
+{
+    "top": [],
+    "list": [
+        {
+            "title": "测试文章work",
+            "page": "article",
+            "key": "articleId",
+            "id": "demo"
+        }
+    ]
+}

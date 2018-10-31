@@ -16,6 +16,8 @@ var app = express();
 app.use(express.static(path.join(__dirname, './project/index/static')));
 // 正文资源 请求返回
 app.use(express.static(path.join(__dirname, './project/index/src/articleAssets')));
+//  list资源返回
+app.use(express.static(path.join(__dirname, './project/index/src/assets')));
 
 
 // app.all('/', function(req, res){
